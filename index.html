@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rise Up</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <div class="bg-savanna" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="grid-bg" aria-hidden="true"></div>
+
+  <main class="shell">
+    <header class="intro">
+      <p class="eyebrow">A quiet corner</p>
+      <h1>Hakuna Matata</h1>
+      <p class="lede">
+        Dreams demand daily deposits. 
+      </p>
+    </header>
+
+    <section class="quote-card" aria-labelledby="quote-heading">
+      <h2 id="quote-heading" class="quote-card-title">Words for you</h2>
+      <blockquote class="quote">
+        <p id="quoteText" class="quote-text"></p>
+        <footer class="quote-footer">
+          <cite id="quoteAuthor" class="quote-author"></cite>
+        </footer>
+      </blockquote>
+      <div class="quote-actions">
+        <button type="button" id="nextQuoteBtn" class="btn ghost">
+          Another quote
+        </button>
+      </div>
+    </section>
+
+    <section class="panel" aria-labelledby="write-label">
+      <label id="write-label" for="note" class="label">What’s on your mind today?</label>
+      <textarea
+        id="note"
+        name="note"
+        rows="4"
+        placeholder="A worry, a task, a feeling…"
+        autocomplete="off"
+      ></textarea>
+      <div class="actions">
+        <button type="button" id="foldBtn" class="btn primary">
+          Send it to the Universe
+        </button>
+      </div>
+      <p id="hint" class="hint" role="status"></p>
+    </section>
+
+    <section class="echo-section" aria-labelledby="echo-heading">
+      <h2 id="echo-heading" class="visually-hidden">What you wrote</h2>
+      <div id="mindEcho" class="mind-echo" hidden aria-live="polite">
+        <p id="mindEchoText" class="mind-echo-text"></p>
+      </div>
+    </section>
+
+    <section class="drawer" aria-labelledby="vault-heading">
+      <p class="vault-count">
+        <span id="starCount">0</span> <span id="starWord">stars</span> saved
+      </p>
+      <h2 id="vault-heading" class="subhead">Your folded stars</h2>
+      <p class="vault-note">Tap a star to read. Hover a star to delete it. Everything stays on this device.</p>
+      <ul id="vault" class="vault-list"></ul>
+    </section>
+  </main>
+
+  <div id="modal" class="modal" hidden>
+    <div class="modal-backdrop" data-close></div>
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <button type="button" class="modal-close" data-close aria-label="Close">×</button>
+      <p id="modal-title" class="modal-title">From a star</p>
+      <p id="modalBody" class="modal-body"></p>
+    </div>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
